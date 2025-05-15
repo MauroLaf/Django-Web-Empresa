@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core', #agrego la app core
+    'blog',
     'services.apps.ServicesConfig', #agrego la configuracion de servicios/app/servicesconfig
 ]
 
