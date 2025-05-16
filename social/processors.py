@@ -1,8 +1,8 @@
 from .models import Link 
 
-def context_dict(request):
-    context_dict = {}
+def context_dict_link(request):
+    context = {}
     links = Link.objects.all()
     for link in links:
-        context_dict[link.key] = link.url
-    return context_dict
+        context[link.key] = link.url
+    return context

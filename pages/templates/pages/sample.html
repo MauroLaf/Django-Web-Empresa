@@ -14,7 +14,14 @@
             <h2 class="section-heading mb-4">
               <span class="section-heading-lower">{{page.title}}</span>
             </h2>
-            <div class="section-content">{{page.content|linebreaks}} </div>
+            <div class="section-content">{{page.content|safe}}
+              <!--inyecto processor de auth para saber si esta log el usuario-->
+              <!--{{user}}-->
+              <!--Uso template tag para validar usuario y permitir editar la pagina desde el admin-->
+              {% if user.is_authenticated %}
+                <p><a href="{% url 'admin:pages_page_change' page.id %}">Editar</a></p>
+              {% endif %}
+            </div>
           </div>
         </div>
       </div>

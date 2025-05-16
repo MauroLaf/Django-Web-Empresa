@@ -6,5 +6,10 @@ from .models import Link #importo mi clase link de mi modelo
 class LinkAdmin(admin.ModelAdmin):
     readonly_fields = ('created', 'updated')
     
+    def get_readonly_fields(self, request, obj = None):
+        if request.user.groups.filer(name="Personal").exists():
+            return ('key', 'name')
+        else:
+            return ('created', 'updated')
 #activamos en el admin site el modelo link pasandole el adm de prueba
 admin.site.register(Link, LinkAdmin) #le paso mi clase modelo link y la clase para administrar y doy runserver

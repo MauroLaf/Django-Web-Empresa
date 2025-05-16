@@ -95,11 +95,17 @@
 	        {% endif %}
           </a>
 	    </p>
-        <p class="m-0 mbt">
-        	<a href="sample.html" class="link">Política de privacidad</a> ·
-        	<a href="sample.html" class="link">Aviso legal</a> ·
-        	<a href="sample.html" class="link">Cookies</a>
-		</p>
+        <p class="m-0">
+    {% if all_pages.politica_de_privacidad %}
+        <a href="{% url 'page' all_pages.politica_de_privacidad.id %}" class="link">Política de privacidad</a> ·
+    {% endif %}
+    {% if all_pages.aviso_legal %}
+        <a href="{% url 'page' all_pages.aviso_legal.id %}" class="link">Aviso legal</a> ·
+    {% endif %}
+    {% if all_pages.cookies %}
+        <a href="{% url 'page' all_pages.cookies.id %}" class="link">Cookies</a>
+    {% endif %}
+</p>
         <p class="m-0 mbt1">&copy; La Caffettiera 2018</p>
       </div>
 	</footer>

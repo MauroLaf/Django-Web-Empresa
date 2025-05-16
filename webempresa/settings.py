@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core', #agrego la app core
     'blog',
+    'ckeditor',
+    'contact',
     'services.apps.ServicesConfig', #agrego la configuracion de servicios/app/servicesconfig
     'social.apps.SocialConfig',
     'pages.apps.PagesConfig',
@@ -67,7 +69,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'social.processors.context_dict'
+                'social.processors.context_dict_link',
+                'pages.processors.context_dict_page',
             ],
         },
     },
@@ -134,3 +137,30 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Ckeditor
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'Custom',
+        'toolbar_Custom': [
+            ['Bold', 'Italic', 'Underline'],
+            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+            ['Link', 'Unlink'],
+            ['RemoveFormat', 'Source']
+        ]
+    }
+}
+
+# Email Config (usare mi gmail para mandar tambien)
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'           # Servidor SMTP de Gmail
+EMAIL_PORT = 587                        # Puerto TLS
+EMAIL_USE_TLS = True                    # Usar conexión segura TLS
+EMAIL_HOST_USER = 'maurojoaquinlafuente@gmail.com' # Tu correo de Gmail
+EMAIL_HOST_PASSWORD = 'eyfdykxxeerpluan'  # Tu contraseña o contraseña de app#
+
+# Email Config 'mailtrap'
+# Looking to send emails in production? Check out our Email API/SMTP product!
+EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+EMAIL_HOST_USER = '090192c22dfb01'
+EMAIL_HOST_PASSWORD = '4e0e09a0718915'
+EMAIL_PORT = '2525'
