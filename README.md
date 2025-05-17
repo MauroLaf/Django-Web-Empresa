@@ -1,6 +1,8 @@
 🌐 Proyecto Web Empresarial con Django
 Este es mi segundo proyecto - web empresarial - realizado con Python y Django, inspirado en el curso de Hektor Profe. El objetivo principal es crear una web para una empresa que permita gestionar servicios, páginas estáticas, blogs y formularios de contacto, integrando un frontend personalizado y un backend robusto con Django.
 
+Se encuentra desplegado en: https://maurolafuente.pythonanywhere.com/
+
 🛠 Tecnologías utilizadas
 Python 3.11
 
