@@ -1,0 +1,15 @@
+[33mab3d667[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m ultimo
+[33m3656559[m add if mails settings.py and python manage.py collectstatic
+[33ma3984af[m add whitenoise midlewhere, add buildcommand collectstatic in render yaml add whitenoise in requirements.txt add rootstatic collect static settings.py
+[33mf1bd5eb[m add render.yaml
+[33m640a23a[m add DEBUG = 'RENDER' not in os.environ /'static'/
+[33m15d42c8[m debug false and allowed host '*'
+[33mfdca5f0[m requirements
+[33mbf358ac[m url store visitanos
+[33m376dc4d[m add gitignore readme and requirements
+[33mf599369[m add ico and name Perrunos
+[33md1b3227[m add user config and mail
+[33mb27314e[m add pages
+[33m9ac8611[m add startapp social and pages
+[33m6675fad[m add models
+[33m332ff92[m first commit
