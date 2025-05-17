@@ -158,16 +158,18 @@ CKEDITOR_CONFIGS = {
 }
 
 # Email Config (usare mi gmail para mandar tambien)
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'           # Servidor SMTP de Gmail
-EMAIL_PORT = 587                        # Puerto TLS
-EMAIL_USE_TLS = True                    # Usar conexión segura TLS
-EMAIL_HOST_USER = 'maurojoaquinlafuente@gmail.com' # Tu correo de Gmail
-EMAIL_HOST_PASSWORD = 'eyfdykxxeerpluan'  # Tu contraseña o contraseña de app#
-
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = 'smtp.gmail.com'           # Servidor SMTP de Gmail
+    EMAIL_PORT = 587                        # Puerto TLS
+    EMAIL_USE_TLS = True                    # Usar conexión segura TLS
+    EMAIL_HOST_USER = 'maurojoaquinlafuente@gmail.com' # Tu correo de Gmail
+    EMAIL_HOST_PASSWORD = 'eyfdykxxeerpluan'  # Tu contraseña o contraseña de app#
+else:
 # Email Config 'mailtrap'
 # Looking to send emails in production? Check out our Email API/SMTP product!
-EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
-EMAIL_HOST_USER = '090192c22dfb01'
-EMAIL_HOST_PASSWORD = '4e0e09a0718915'
-EMAIL_PORT = '2525'
+    EMAIL_HOST = 'sandbox.smtp.mailtrap.io'
+    EMAIL_HOST_USER = '090192c22dfb01'
+    EMAIL_HOST_PASSWORD = '4e0e09a0718915'
+    EMAIL_PORT = '2525'
+
