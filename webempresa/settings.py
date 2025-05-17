@@ -49,6 +49,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', #agrego whitenoise
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -125,6 +126,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Carpeta donde Django pondrá todos los archivos estáticos recolectados (para producción)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Configuración para WhiteNoise (si lo usas)
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Conf para ficheros media
 # Damos como valor de variable el enlace que tienen que seguir estos ficheros

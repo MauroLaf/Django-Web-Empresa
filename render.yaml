@@ -2,7 +2,7 @@ services:
   - type: web
     name: webempresa
     env: python
-    buildCommand: ""
+    buildCommand: "python manage.py collectstatic --noinput"
     startCommand: gunicorn webempresa.wsgi:application
     envVars:
       - key: DJANGO_SETTINGS_MODULE
