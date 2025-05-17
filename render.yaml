@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: webempresa
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn webempresa.wsgi:application
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: webempresa.settings
+      - key: PYTHON_VERSION
+        value: 3.13
